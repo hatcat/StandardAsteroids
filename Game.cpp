@@ -133,3 +133,13 @@ void asteroids::game::draw_missiles(display_surface& ds)
 {
 	for (auto& m : m_ship_missiles) { m.draw(ds); }
 }
+
+int asteroids::main()
+{
+	using namespace std::experimental::io2d;
+
+	asteroids::game sd;
+	auto ds = make_display_surface(640, 480, format::argb32, scaling::letterbox, refresh_rate::as_fast_as_possible, 30.0);
+	ds.draw_callback([&](display_surface& ds) {sd.update(ds); });
+	return ds.begin_show();
+}

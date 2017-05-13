@@ -37,4 +37,6 @@ namespace asteroids
 		std::uniform_int_distribution<>			m_0_to_3;
 		std::uniform_real_distribution<double>	m_0_to_1;
 	};
+
+	int main();
 }
